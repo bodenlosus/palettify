@@ -23,7 +23,8 @@ def interpolate(color: np.ndarray, closest1: np.ndarray, closest2: np.ndarray) -
 def findClosestColors(rgb: np.ndarray, palette: np.ndarray, exp:np.float32=15) -> np.ndarray:
     """Find the closest color in the palette to the given RGB color."""
     # Calculate squared distances for all palette colors
-    dists:npt.NDArray = np.sqrt(np.sum(np.square(palette - rgb), axis=1))
+    # dists:npt.NDArray = np.sqrt(np.sum(np.square(palette - rgb), axis=1))
+    dists:npt.NDArray = np.sum(np.square(palette - rgb), axis=1)
     # Find the index of the minimum distance
     
     fac = np.interp(dists, (dists.min(), dists.max()), (1, 0)) ** exp
