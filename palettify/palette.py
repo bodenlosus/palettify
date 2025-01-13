@@ -39,7 +39,7 @@ def genPalette(palettePath: str, PALETTE_SIZE=16):
             rgb = hexToRgbTuple(hexCodes[i].strip())
             palette[i] = rgb
             
-        palette = d2lerpPalette(palette)
+        # palette = d2lerpPalette(palette)
         
         paletteImage(palette, 10).save('palette.png')
         return palette

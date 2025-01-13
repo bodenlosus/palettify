@@ -3,7 +3,7 @@ from palettify.main_prog import main
 import sys
 def cli():
     parser = argparse.ArgumentParser(
-        prog='Adaptive Wallpapers',
+        prog='palettify',
         description='Convert your wallpapers to your favpurite pallete',
         epilog='')
     
@@ -11,6 +11,7 @@ def cli():
     parser.add_argument('-d', '--dir', required=False, action='store_true', default=False)
     parser.add_argument('-o', '--output', required=False, default='output.png', type=str)
     parser.add_argument('-p', '--palette', required=True, type=str)
+    
     
     args = parser.parse_args()
     main(
